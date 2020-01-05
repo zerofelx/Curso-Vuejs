@@ -11,3 +11,52 @@
     padding: 5px 15px;
     width: 40%;
 }
+#ListaCursos {
+    counter-reset: li; 
+    list-style: none; 
+    *list-style: decimal; 
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+#ListaCursos li{
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #dedede;
+    color: #555;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;   
+}
+#ListaCursos li:hover{
+    background: #efefef;
+}
+
+#ListaCursos li:hover:before{
+    transform: rotate(360deg);  
+}
+#ListaCursos li:before{
+    content: counter(li);
+    counter-increment: li;
+    position: absolute; 
+    left: -1.3em;
+    top: 50%;
+    margin-top: -1.3em;
+    background: #5de063;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2em;
+    transition: all .3s ease-out;
+}
+.cursos {
+    font-size: 20px;
+    margin: 0;
+}

@@ -28,9 +28,11 @@ const app = new Vue({
     methods: {
         AddCourse() {
             if (this.title && this.time) {
+                var TitleUrl = this.title.toLocaleLowerCase()
                 this.courses.push({
                     title: this.title,
-                    time: this.time
+                    time: this.time,
+                    url: "https://platzi.com/search/?search=" + TitleUrl
                 })
                 this.totalTime = parseInt(this.totalTime) + parseInt(this.time)
                 this.title = ""
