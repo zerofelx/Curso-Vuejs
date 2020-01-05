@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>App</title>
+</head>
+<body>
+    <div id="App-Main" v-bind:style="{ background: '#' + color }">
+        <img v-on:mouseover="ToggleShowPrices()" v-on:mouseout="ToggleShowPrices()" v-bind:src="img" v-bind:alt="name">
+        <h1 v-bind:class="changePercent > 0 ? 'green' : 'red' ">
+            {{ title }}
+            <span v-show="changePercent > 0">✓</span>
+            <span v-show="changePercent < 0 ">Error</span>
+            <span v-show="changePercent == 0">0!</span>
+        </h1>
+
+        <input type="button" v-bind:value="!ShowPrices ? 'Ver precios':'Ocultar precios'" v-on:click="ToggleShowPrices()">
+
+        <ul v-show="ShowPrices">
+
+            <li 
+            v-bind:class="{ green: p.value > price, red: p.value < price, orange: p.value == price}"   
+            v-for="(p, i) in priceWithDays" 
+            v-bind:key="p.day">
+                [{{ i }}] - {{ p.day }}  {{ p.value }}
+            </li>
+        </ul>
+        <br>
+        <br>
+        <input type="number" v-model="value">
+        <br>
+        <span>{{ ConvertedValue }}</span>
+        <br>
+        <br>
+        <input type="button" v-bind:value="!DarkMode ? 'Activar Modo Oscuro' : 'Desactivar Modo Oscuro' " v-on:click="ToggleDarkMode()">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

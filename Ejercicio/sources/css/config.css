@@ -1,0 +1,13 @@
+#app {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+#app input[type="text"], input[type="number"] {
+    padding: 10px 20px;
+    width: 60%
+}
+#app button {
+    padding: 5px 15px;
+    width: 40%;
+}
