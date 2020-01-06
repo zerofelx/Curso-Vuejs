@@ -6,8 +6,8 @@ Este repositorio tendrá los trabajos que he hecho en el curso de Vue.js
 ---
 ## Ejercicios:
 ### Ejercicio - Cursos:
-- https://zerofelx.github.io/Curso-Vuejs/Ejercicio - Cursos/index.html
+- https://zerofelx.github.io/Curso-Vuejs/Ejercicio%20-%20Cursos/index.html
 ### Ejercicio - Modal:
-- https://zerofelx.github.io/Curso-Vuejs/Ejercicio - Modal/index.html
+- https://zerofelx.github.io/Curso-Vuejs/Ejercicio%20-%20Modal/index.html
 
 
