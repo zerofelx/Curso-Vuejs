@@ -24,6 +24,12 @@ Vue.component('crypto', {
             this.ShowPrices = !this.ShowPrices
         }
     },
+    created() {
+        console.log("Created Crypto")
+    },
+    mounted() {
+        console.log("Mounted Crypto")
+    },
     template: `
     <div class="crypto">
         <img v-on:mouseover="ToggleShowPrices()" v-on:mouseout="ToggleShowPrices()" v-bind:src="coin.img" v-bind:alt="coin.name">
@@ -42,6 +48,9 @@ Vue.component('crypto', {
         <br>
         <br>
 
+        <slot name="text"></slot>
+        <slot name="link"></slot>
+
         <ul v-show="ShowPrices">
         <li 
         v-bind:class="{ green: p.value > coin.price, red: p.value < coin.price, orange: p.value == coin.price}"   
@@ -51,7 +60,8 @@ Vue.component('crypto', {
         </li>
     </ul>
     </div>
-    `
+    `,
+    
 })
 
 new Vue({
@@ -104,5 +114,11 @@ new Vue({
             this.color = this.color.split('').reverse().join('');
             this.DarkMode = !this.DarkMode
         }
+    },
+    created() {
+        console.log("Created Root")
+    },
+    mounted() {
+        console.log("Mounted Root")
     }
 })

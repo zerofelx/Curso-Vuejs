@@ -10,7 +10,14 @@
 <body>
     <div id="App-Main" v-bind:style="{ background: '#' + color }">
         <div id="CriptoMonedas">
-            <crypto v-bind:coin="btc"></crypto>
+            <crypto v-bind:coin="btc">
+                <template v-slot:text>
+                    <p>Texto</p>
+                </template>
+                <template v-slot:link>
+                    <a href="#">Link</a>
+                </template>
+            </crypto>
             <crypto v-bind:coin="lite"></crypto>
         </div>
         <input type="button" v-bind:value="!DarkMode ? 'Activar Modo Oscuro' : 'Desactivar Modo Oscuro' " v-on:click="ToggleDarkMode()">
